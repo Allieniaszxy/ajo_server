@@ -23,10 +23,9 @@ const schema = z.object({
 const parsed = schema.safeParse(process.env);
 
 if (!parsed.success) {
-  // The logger depends on env, so console is the right tool here
-  console.error(
-    `Invalid environment configuration:\n${z.prettifyError(parsed.error)}`,
-  );
+  const message = `Invalid environment configuration:\n${z.prettifyError(parsed.error)}`;
+  if (process.env.NODE_ENV === "test") throw new Error(message);
+  console.error(message);
   process.exit(1);
 }
 
