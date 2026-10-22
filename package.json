@@ -1,0 +1,48 @@
+{
+  "name": "ajo-server",
+  "version": "1.0.0",
+  "description": "Backend API for Ajo, a cooperative savings and contribution platform",
+  "main": "src/server.js",
+  "private": true,
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/server.js",
+    "start": "node src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "argon2": "^0.45.1",
+    "axios": "^1.20.0",
+    "compression": "^1.8.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dayjs": "^1.11.23",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.3",
+    "nanoid": "^6.0.2",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^10.2.0",
+    "pino": "^10.4.0",
+    "pino-http": "^11.0.0",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "eslint": "^10.13.0",
+    "mongodb-memory-server": "^11.3.0",
+    "pino-pretty": "^13.2.0",
+    "prettier": "^3.9.10",
+    "supertest": "^7.3.1",
+    "vitest": "^5.0.5"
+  }
+}
